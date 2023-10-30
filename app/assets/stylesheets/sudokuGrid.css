@@ -1,0 +1,48 @@
+.board{
+	pointer-events: auto;
+}
+
+.grid{
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	cursor: pointer;
+	
+  transform: scale(0.923);
+  opacity: 1;
+  left: 430px;
+  top: 329px;
+  width: 608px;
+  height: 624px;
+}
+
+.cells{
+	pointer-events: none;
+}
+
+/* "row" overriden by some .sccs file */
+.rowX{
+	display: flex;
+}
+
+.cell{
+	position: relative;
+	width: 64px;
+	height: 64px;
+	border: 1px solid black;
+	text-align: center;
+	font-size: 40px;
+}
+
+
+
+.boardSvg{
+	position: absolute;
+}
+
+.gridStyle{
+	position: relative;
+	fill: none;
+	stroke-width: 5;
+	stroke: rgb(0,0,0);
+}

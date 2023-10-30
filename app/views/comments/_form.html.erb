@@ -1,0 +1,13 @@
+<%= form_with model: [ @puzzle, @puzzle.comments.build ] do |form| %>
+  <p>
+    <%= form.label :nick %><br>
+    <%= form.text_field :nick %>
+  </p>
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

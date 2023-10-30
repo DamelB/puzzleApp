@@ -1,0 +1,19 @@
+<div class="info">
+	<h1><%= @puzzle.title %></h1>
+	<p><%= @puzzle.rules %></p>
+</div>
+
+<%= render "puzzle", puzzle: @puzzle %>
+
+<ul>
+	<li><%= link_to "Edit", edit_puzzle_path(@puzzle) %></li>
+	<li><%= link_to "Delete puzzle", puzzle_path(@puzzle), data:{
+					turbo_method: :delete, turbo_confirm: "Do you really want to delete the puzzle?"} %></li>
+	<li><%= link_to "Back to menu", root_path %></li>
+</ul>
+
+<h2>Comments</h2>
+<%= render @puzzle.comments %>
+
+<h2>Add a comment:</h2>
+<%= render "comments/form" %>

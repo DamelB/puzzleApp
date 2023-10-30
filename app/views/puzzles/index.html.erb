@@ -1,0 +1,11 @@
+<h1>List of puzzles</h1>
+
+<ul>
+	<% @puzzles.each do |puzzle| %>
+		<li>
+			<%= link_to puzzle.title, puzzle %>
+		</li>	
+	<% end %>
+</ul>
+
+<%= link_to "Set a new puzzle", new_puzzle_path %>

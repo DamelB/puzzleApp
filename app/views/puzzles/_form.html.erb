@@ -1,0 +1,37 @@
+<%= form_with model: puzzle do |form| %>
+	<div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+		<% puzzle.errors.full_messages_for(:title).each do |message| %>
+      <div class="error"><%= message + "."%></div>
+    <% end %>
+  </div>
+	
+  <div>
+    <%= form.label :rules %><br>
+    <%= form.text_area :rules %>
+		<% puzzle.errors.full_messages_for(:rules).each do |message| %>
+      <div class="error"><%= message + "." %></div>
+    <% end %>
+  </div>
+	
+	<div>
+		<%= form.label :rows, "# rows" %>
+		<%= form.number_field :rows, value: 9, in: 4...20 %>
+			
+	</div>
+		
+	<div>
+		<%= form.label :cols, "# columns" %>
+		<%= form.number_field :cols, value: 9, in: 4...20 %>
+	</div>
+	
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<!-- doesn't work for new, assuming the reason could be with not yet saved instance -->
+<% if not newHtml %>
+	<%= render "puzzle", puzzle: puzzle %>
+<% end %>
